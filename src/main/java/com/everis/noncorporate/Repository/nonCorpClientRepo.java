@@ -11,13 +11,15 @@ import reactor.core.publisher.Mono;
 
 public interface nonCorpClientRepo extends ReactiveMongoRepository<nonCorpClient, String> {
 	
-    public Flux<nonCorpClient> findByName(String fullname);
+    public Flux<nonCorpClient> findAllByName(String fistname);
+
+    public Flux<nonCorpClient> findAllByLastName(String lastname);
     
     public Mono<nonCorpClient> findByDni(String dni);
 
     public Mono<nonCorpClient> findByPhone(String phone);
 
-    public Flux<nonCorpClient> findByAddress(String address);
+    public Flux<nonCorpClient> findAllByAddress(String address);
 	
 	//public Flux<nonCorpClient> findByDateBirthBetween(Date firstDate, Date lastDate);
 }

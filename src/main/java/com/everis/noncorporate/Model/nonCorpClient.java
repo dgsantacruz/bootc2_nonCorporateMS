@@ -24,7 +24,10 @@ public class nonCorpClient {
     private String dni;
     
 	@NotBlank
-    private String fullname;
+    private String firstname;
+
+    @NotBlank
+    private String lastname;
     
     @NotBlank
     private String address;
