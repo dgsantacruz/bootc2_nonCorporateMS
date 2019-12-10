@@ -15,7 +15,7 @@ import lombok.Data;
 
 //This spring data annotation allows to override default collection naming to one I choose.
 @Document(collection = "nonCorpClients")
-public class nonCorpClient {
+public class NonCorpClient {
 
     @Id
     private String id;
