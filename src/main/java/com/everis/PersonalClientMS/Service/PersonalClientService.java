@@ -7,15 +7,14 @@ import com.everis.PersonalClientMS.Model.PersonalClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface PersonalClientService {
+public interface PersonalClientService {    
     
-    //This method helps group clients before add them to the db?
-    public Flux<PersonalClient> findAllClients();
+    //Create Client
+    public Mono<PersonalClient> addClient(PersonalClient client);
 
-    public Mono<PersonalClient> findById(String id);
-
-    public Mono<PersonalClient> saveClient(PersonalClient client);
-	    
+    //Delete Client
     public Mono<Void> deleteClient(PersonalClient client);
-	
+
+    //Get All Clients
+    public Flux<PersonalClient> findAllClients();    	
 }

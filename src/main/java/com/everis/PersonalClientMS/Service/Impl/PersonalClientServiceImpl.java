@@ -17,24 +17,24 @@ public class PersonalClientServiceImpl implements PersonalClientService {
     @Autowired
     private PersonalClientRepo repo;
 
+    //Create Client
     @Override
-    public Flux<PersonalClient> findAllClients() {
-        return repo.findAll();
-    }
-
-    @Override
-    public Mono<PersonalClient> findById(String id) {
-        return repo.findById(id);
-    }
-
-    @Override
-    public Mono<PersonalClient> saveClient(PersonalClient client) {
+    public Mono<PersonalClient> addClient(final PersonalClient client) 
+    {
         return repo.save(client);
     }
 
+    //Delete Client
     @Override
-    public Mono<Void> deleteClient(PersonalClient client) {
+    public Mono<Void> deleteClient(final PersonalClient client) 
+    {
         return repo.delete(client);
     }
 
+    //Get All Clients
+    @Override
+    public Flux<PersonalClient> findAllClients() 
+    {
+        return repo.findAll();
+    }
 }

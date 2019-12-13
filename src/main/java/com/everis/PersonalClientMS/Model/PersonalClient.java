@@ -6,13 +6,11 @@ import javax.validation.constraints.NotBlank;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-// import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
 //This lombok annotation it's a shortcut to @string, @EqualsandHashCode, @Getter and @Setter and @RequiredArgsConstructor
 @Data
-
 //This spring data annotation allows to override default collection naming to one I choose.
 @Document(collection = "PersonalClients")
 public class PersonalClient {
@@ -33,9 +31,5 @@ public class PersonalClient {
     private String address;
 
     @NotBlank
-    private String phone;
-    
-	// @DateTimeFormat(pattern = "yyyy-MM-dd")
-	// private Date dateBirth;
-	
+    private String phone;  
 }
