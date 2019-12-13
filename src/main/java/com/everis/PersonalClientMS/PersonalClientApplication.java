@@ -1,4 +1,4 @@
-package com.everis.noncorporate;
+package com.everis.PersonalClientMS;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class NoncorporateApplication {
+public class PersonalClientApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NoncorporateApplication.class, args);
+		SpringApplication.run(PersonalClientApplication.class, args);
 	}
 
 }

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.everis</groupId>
-	<artifactId>noncorporate</artifactId>
+	<artifactId>PersonalClientMS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>noncorporate</name>
-	<description>nonCorporate Microservice</description>
+	<name>PersonalClientMS</name>
+	<description>Personal Client Microservice</description>
 
 	<properties>
 		<java.version>1.8</java.version>

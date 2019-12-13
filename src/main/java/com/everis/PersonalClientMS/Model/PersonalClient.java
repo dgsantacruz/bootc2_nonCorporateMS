@@ -1,4 +1,4 @@
-package com.everis.noncorporate.Model;
+package com.everis.PersonalClientMS.Model;
 
 // import java.util.Date;
 
@@ -14,8 +14,8 @@ import lombok.Data;
 @Data
 
 //This spring data annotation allows to override default collection naming to one I choose.
-@Document(collection = "nonCorpClients")
-public class NonCorpClient {
+@Document(collection = "PersonalClients")
+public class PersonalClient {
 
     @Id
     private String id;
