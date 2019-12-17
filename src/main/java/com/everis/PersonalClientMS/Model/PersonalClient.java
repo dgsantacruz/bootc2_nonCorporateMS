@@ -22,8 +22,11 @@ public class PersonalClient {
     private String dni;
     
     @NotBlank
-    private String firstname;
+    private String name;
+    
+    @NotBlank
+    private String phone;
 
     @NotBlank
-    private String lastname;    
+    private String address;
 }
