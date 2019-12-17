@@ -18,18 +18,12 @@ public class PersonalClient {
     @Id
     private String id;
 
-	@NotBlank
+    @NotBlank
     private String dni;
     
-	@NotBlank
+    @NotBlank
     private String firstname;
 
     @NotBlank
-    private String lastname;
-    
-    @NotBlank
-    private String address;
-
-    @NotBlank
-    private String phone;  
+    private String lastname;    
 }

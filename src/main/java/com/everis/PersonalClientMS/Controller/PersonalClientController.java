@@ -11,9 +11,11 @@ import com.everis.PersonalClientMS.Service.PersonalClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @RestController
+@RequestMapping("/api/pclients")
 public class PersonalClientController
 {
     //Create instance of business layer implementation
@@ -28,7 +30,7 @@ public class PersonalClientController
     }
 
     //Get all clients
-    @GetMapping("/id/all")
+    @GetMapping("/all")
     public Flux<PersonalClient> getAllClient() 
     {
         return service.findAllClients();
