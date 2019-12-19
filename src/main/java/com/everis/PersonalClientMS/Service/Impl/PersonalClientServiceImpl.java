@@ -1,5 +1,6 @@
 package com.everis.PersonalClientMS.Service.Impl;
 
+import com.everis.PersonalClientMS.DTO.PersonalClientDTO;
 import com.everis.PersonalClientMS.Model.PersonalClient;
 import com.everis.PersonalClientMS.Repository.PersonalClientRepo;
 import com.everis.PersonalClientMS.Service.PersonalClientService;
@@ -19,16 +20,38 @@ public class PersonalClientServiceImpl implements PersonalClientService {
 
     //Get All Clients
     @Override
-    public Flux<PersonalClient> findAllClients() 
+    public Flux<PersonalClient> findAllClients()
     {
         return repo.findAll();
     }
 
+
+    // //Get all clients (DTO)
+    // @Override
+    // public Flux<PersonalClientDTO> findAllClientsDTO() 
+    // {
+    //     return repo.findAll()
+    //                     .flatMap(client -> 
+    //                     {
+    //                         client.getDni();
+    //                         client.getName();
+    //                         return 
+    //                     });
+    // }
+
+    //Get client by Dni
     @Override
     public Mono<PersonalClient> findByDni(String dni) 
     {
         return repo.findByDni(dni);
     }
+    
+    // //Get client by Dni (DTO)
+    // public Mono<PersonalClientDTO> findByDniDTO(String dni)
+    // {
+    //     return repo.findByDni(dni)
+    //                 .flatMap(client -> );
+    // }
 
     @Override
     public Flux<PersonalClient> findByName(String name) 

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import com.everis.PersonalClientMS.DTO.PersonalClientDTO;
 import com.everis.PersonalClientMS.Model.PersonalClient;
 import com.everis.PersonalClientMS.Service.PersonalClientService;
 
@@ -33,11 +34,26 @@ public class PersonalClientController
         return service.findAllClients();
     }
 
+    //Get all clients (DTO)
+    @GetMapping("/alldto")
+    public Flux<PersonalClientDTO> getAllClientDTO() 
+    {
+        return service.findAllClients()
+                        .map(client -> new PersonalClientDTO(client.getDni(), client.getName()));
+    }
+
     //Get client By Dni
-    @GetMapping("/dni/{dni}")
+    @GetMapping("/dnidto/{dni}")
     public Mono<PersonalClient> getClientByDni(@PathVariable String dni)
     {
         return service.findByDni(dni);
+    }
+
+    //Get client By Dni (DTO)
+    @GetMapping("/dni/{dni}")
+    public Mono<PersonalClientDTO> getClientByDniDTO(@PathVariable String dni)
+    {
+        return null; //service.findByDni(dni);
     }
 
     //Get client By Name
