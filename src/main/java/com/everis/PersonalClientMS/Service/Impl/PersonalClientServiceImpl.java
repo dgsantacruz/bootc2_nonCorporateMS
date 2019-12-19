@@ -1,6 +1,5 @@
 package com.everis.PersonalClientMS.Service.Impl;
 
-import com.everis.PersonalClientMS.DTO.PersonalClientDTO;
 import com.everis.PersonalClientMS.Model.PersonalClient;
 import com.everis.PersonalClientMS.Repository.PersonalClientRepo;
 import com.everis.PersonalClientMS.Service.PersonalClientService;

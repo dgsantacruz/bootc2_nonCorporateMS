@@ -1,6 +1,5 @@
 package com.everis.PersonalClientMS.Service;
 
-import com.everis.PersonalClientMS.DTO.PersonalClientDTO;
 //Imports Model class
 import com.everis.PersonalClientMS.Model.PersonalClient;
 
