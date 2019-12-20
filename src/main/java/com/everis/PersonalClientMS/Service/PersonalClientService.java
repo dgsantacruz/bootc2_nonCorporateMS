@@ -11,15 +11,9 @@ public interface PersonalClientService {
     
     //Get All Clients
     public Flux<PersonalClient> findAllClients();
-
-    // //Get all Clients (DTO)
-    // public Flux<PersonalClientDTO> findAllClientsDTO();
     
     //Get client By Dni
     public Mono<PersonalClient> findByDni(String dni);
-
-    // //Get client By Dni (DTO)
-    // public Mono<PersonalClientDTO> findByDniDTO(String dni);
 
     //Get client By Name
     public Flux<PersonalClient> findByName(String name);
