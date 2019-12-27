@@ -1,5 +1,6 @@
 package com.everis.PersonalClientMS.Service.Impl;
 
+import com.everis.PersonalClientMS.DTO.PersonalClientDTO;
 import com.everis.PersonalClientMS.Model.PersonalClient;
 import com.everis.PersonalClientMS.Repository.PersonalClientRepo;
 import com.everis.PersonalClientMS.Service.PersonalClientService;
@@ -25,18 +26,12 @@ public class PersonalClientServiceImpl implements PersonalClientService {
     }
 
 
-    // //Get all clients (DTO)
-    // @Override
-    // public Flux<PersonalClientDTO> findAllClientsDTO() 
-    // {
-    //     return repo.findAll()
-    //                     .flatMap(client -> 
-    //                     {
-    //                         client.getDni();
-    //                         client.getName();
-    //                         return 
-    //                     });
-    // }
+    //Get all clients (DTO)
+    @Override
+    public Flux<PersonalClientDTO> findAllClientsDTO() 
+    {
+        return repo.findAll().map(client -> new PersonalClientDTO(client.getDni(), client.getName()));
+    }
 
     //Get client by Dni
     @Override
@@ -45,12 +40,12 @@ public class PersonalClientServiceImpl implements PersonalClientService {
         return repo.findByDni(dni);
     }
     
-    // //Get client by Dni (DTO)
-    // public Mono<PersonalClientDTO> findByDniDTO(String dni)
-    // {
-    //     return repo.findByDni(dni)
-    //                 .flatMap(client -> );
-    // }
+    //Get client by Dni (DTO)
+    @Override
+    public Mono<PersonalClientDTO> findByDniDTO(String dni)
+    {
+        return repo.findByDni(dni).map(client -> new PersonalClientDTO(client.getDni(), client.getName()));
+    }
 
     @Override
     public Flux<PersonalClient> findByName(String name) 
@@ -58,10 +53,25 @@ public class PersonalClientServiceImpl implements PersonalClientService {
         return repo.findByName(name);
     }
 
+    //Get client by Name (DTO)
+    @Override
+    public Flux<PersonalClientDTO> findByNameDTO(String name) 
+    {
+        return repo.findByName(name).map(client -> new PersonalClientDTO(client.getDni(), client.getName()));
+    }
+
+    //Get client by Phone
     @Override
     public Mono<PersonalClient> findByPhone(String phone)
     {
         return repo.findByPhone(phone);
+    }
+
+    //Get client by Phone (DTO)
+    @Override
+    public Mono<PersonalClientDTO> findByPhoneDTO(String phone)
+    {
+        return repo.findByPhone(phone).map(client -> new PersonalClientDTO(client.getDni(), client.getName()));
     }
 
     //Create Client

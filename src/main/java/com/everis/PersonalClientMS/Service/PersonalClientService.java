@@ -1,5 +1,6 @@
 package com.everis.PersonalClientMS.Service;
 
+import com.everis.PersonalClientMS.DTO.PersonalClientDTO;
 //Imports Model class
 import com.everis.PersonalClientMS.Model.PersonalClient;
 
@@ -11,15 +12,27 @@ public interface PersonalClientService {
     
     //Get All Clients
     public Flux<PersonalClient> findAllClients();
+
+    //Get All Clients (DTO)
+    public Flux<PersonalClientDTO> findAllClientsDTO();
     
     //Get client By Dni
     public Mono<PersonalClient> findByDni(String dni);
 
+    //Get client By Dni (DTO)
+    public Mono<PersonalClientDTO> findByDniDTO(String dni);
+
     //Get client By Name
     public Flux<PersonalClient> findByName(String name);
 
+    //Get client By Name (DTO)
+    public Flux<PersonalClientDTO> findByNameDTO(String name);
+
     //Get client By Phone
     public Mono<PersonalClient> findByPhone(String phone);
+
+    //Get client By Phone (DTO)
+    public Mono<PersonalClientDTO> findByPhoneDTO(String phone);
     
     //Create Client
     public Mono<PersonalClient> addClient(PersonalClient client);

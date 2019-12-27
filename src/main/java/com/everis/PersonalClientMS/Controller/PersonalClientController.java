@@ -43,14 +43,14 @@ public class PersonalClientController
     }
 
     //Get client By Dni
-    @GetMapping("/dnidto/{dni}")
+    @GetMapping("/dni/{dni}")
     public Mono<PersonalClient> getClientByDni(@PathVariable String dni)
     {
         return service.findByDni(dni);
     }
 
     //Get client By Dni (DTO)
-    @GetMapping("/dni/{dni}")
+    @GetMapping("/dnidto/{dni}")
     public Mono<PersonalClientDTO> getClientByDniDTO(@PathVariable String dni)
     {
         return null; //service.findByDni(dni);
@@ -63,11 +63,25 @@ public class PersonalClientController
         return service.findByName(name);
     }
 
+    //Get client By Name (DTO)
+    @GetMapping("/namedto/{name}")
+    public Flux<PersonalClientDTO> getClientsByNameDTO(@PathVariable String name)
+    {
+        return service.findByNameDTO(name);
+    }
+
     //Get client By Phone
     @GetMapping("/phone/{phone}")
     public Mono<PersonalClient> getClientsByPhone(@PathVariable String phone)
     {
         return service.findByPhone(phone);
+    }
+
+    //Get client By Phone (DTO)
+    @GetMapping("/phonedto/{phone}")
+    public Mono<PersonalClientDTO> getClientsByPhoneDTO(@PathVariable String phone)
+    {
+        return service.findByPhoneDTO(phone);
     }
 
     //Create new Personal Client
