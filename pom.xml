@@ -96,7 +96,7 @@
       </dependency>    
 	</dependencies>
 
-	<!-- Swagger 3.0 Repository-->
+	<!-- Swagger 3.0 Repository
 	<repositories>
     	<repository>
       		<id>jcenter-snapshots</id>
@@ -104,6 +104,7 @@
       		<url>http://oss.jfrog.org/artifactory/oss-snapshot-local/</url>
     		</repository>
 	</repositories>
+  -->
 
   </dependencyManagement>
   <build>
@@ -113,5 +114,6 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
     </plugins>
+    <finalName>personalClientDocker</finalName>
   </build>
 </project>
