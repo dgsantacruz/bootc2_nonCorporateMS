@@ -5,7 +5,7 @@ FROM java:8
 EXPOSE 8011:8011
 
 #No idea
-ADD /target/personalClientDocker.jar personalClientDocker.jar
+ADD /target/PersonalClientJar.jar PersonalClientJar.jar
 
 #No idea
-ENTRYPOINT ["java", "-jar", "personalClientDocker.jar"]
+ENTRYPOINT ["java", "-jar", "PersonalClientJar.jar"]

@@ -114,6 +114,6 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
     </plugins>
-    <finalName>personalClientDocker</finalName>
+    <finalName>PersonalClientJar</finalName>
   </build>
 </project>
